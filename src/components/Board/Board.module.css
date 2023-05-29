@@ -1,0 +1,14 @@
+.listStatus {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
+}
+
+strong {
+  color: var(--blue);
+}
+
+strong + strong {
+  padding: 10 10;
+  color: var(--purple);
+}

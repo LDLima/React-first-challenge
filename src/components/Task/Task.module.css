@@ -1,0 +1,48 @@
+.task {
+  display: flex;
+  margin-top: 1.5rem;
+}
+
+.contentBox {
+  background: var(--gray-500);
+  display: flex; /* All in the same line */
+  align-items: flex-start; /* Makes the button aligned to the first line of the start */
+  border-radius: 8px;
+
+  gap: 0.75rem; /*Distance between elements*/
+  padding: 1rem; /*Intern distance from the border*/
+
+  flex: 1; /*Make the div to strech the maximum of the size*/
+}
+
+.contentBox button {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  border-radius: 4px;
+  line-height: 0; /*Height from the button*/
+}
+
+.complete {
+  color: var(--blue);
+}
+
+.complete:hover {
+  color: var(--purple-dark);
+}
+
+.delete {
+  color: var(--gray-300);
+}
+
+.delete:hover {
+  color: var(--red-danger);
+}
+
+.contentBox p {
+  color: var(--gray-100);
+}
+
+.task + .task {
+  margin-top: 0.75rem;
+}
