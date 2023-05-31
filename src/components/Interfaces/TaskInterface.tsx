@@ -3,7 +3,7 @@ export interface TaskProps {
 }
 
 export interface TaskType {
-  id: number
+  id: string
   isComplete: boolean
   content: string
 }

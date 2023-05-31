@@ -1,5 +1,4 @@
 import { PlusCircle } from "phosphor-react"
-import { Board } from "../Board/Board"
 
 import styles from "./NewTask.module.css"
 
