@@ -3,12 +3,12 @@ import { Circle, Trash } from "phosphor-react"
 import styles from "./Task.module.css"
 import { TaskProps } from "../Interfaces/TaskInterface"
 
-export function Task({ task }: TaskProps) {
+export function Task({ task, onCompleteTask }: TaskProps) {
   return (
     <article>
       <div className={styles.task}>
         <div className={styles.contentBox}>
-          <button className={styles.complete}>
+          <button onClick={handleCompletedTask} className={styles.complete}>
             <Circle size={20} />
           </button>
 
@@ -21,4 +21,8 @@ export function Task({ task }: TaskProps) {
       </div>
     </article>
   )
+
+  function handleCompletedTask() {
+    onCompleteTask(task.id)
+  }
 }

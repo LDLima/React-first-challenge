@@ -11,6 +11,8 @@ import { ChangeEvent, FormEvent, useState } from "react"
 export function Board() {
   const [newTaskContent, setTaskContent] = useState<string>("")
   const [tasks, setTaskListValues] = useState<TaskType[]>([])
+  const [tasksCount, setTaskCount] = useState<number>(0)
+  const [tasksDoneCount, setDoneTaskCount] = useState<number>(0)
 
   return (
     <article>
@@ -31,8 +33,8 @@ export function Board() {
         </form>
 
         <div className={styles.listStatus}>
-          <strong>Tarefas criadas 10</strong>
-          <strong>Concluídas 12</strong>
+          <strong>Tarefas criadas {tasksCount}</strong>
+          <strong>Concluídas {tasksDoneCount}</strong>
         </div>
       </header>
 
@@ -41,12 +43,30 @@ export function Board() {
           if (tasks.length == 0) {
             return <EmptyBoard /> //Fix it, why is not calling it?
           } else {
-            return <Task key={task.id} task={task} />
+            return (
+              <Task
+                key={task.id}
+                task={task}
+                onCompleteTask={handleCompleteTasksCount}
+              />
+            )
           }
         })}
       </div>
     </article>
   )
+
+  function handleCompleteTasksCount(id: string) {
+    setDoneTaskCount((amount) => {
+      return amount + 1
+    })
+  }
+
+  function handleTaskCount() {
+    setTaskCount((count) => {
+      return count + 1
+    })
+  }
 
   function handleNewTaskTextChange(event: ChangeEvent<HTMLTextAreaElement>) {
     setTaskContent(event.target.value)
@@ -57,6 +77,7 @@ export function Board() {
     const newTask = createNewTask(newTaskContent)
     setTaskListValues([...tasks, newTask])
     setTaskContent("")
+    handleTaskCount()
   }
 
   function createNewTask(stringContent: string) {
