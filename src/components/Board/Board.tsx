@@ -39,20 +39,18 @@ export function Board() {
       </header>
 
       <div>
-        {tasks.map((task) => {
-          if (tasks.length == 0) {
-            return <EmptyBoard /> //Fix it, why is not calling it?
-          } else {
-            return (
-              <Task
-                key={task.id}
-                task={task}
-                onCompleteTask={handleCompleteTasksCount}
-                onDeleteTask={handleDeleteTask}
-              />
-            )
-          }
-        })}
+        {tasks.length === 0 ? (
+          <EmptyBoard />
+        ) : (
+          tasks.map((task) => (
+            <Task
+              key={task.id}
+              task={task}
+              onCompleteTask={handleCompleteTasksCount}
+              onDeleteTask={handleDeleteTask}
+            />
+          ))
+        )}
       </div>
     </article>
   )
@@ -64,7 +62,7 @@ export function Board() {
 
   function deleteTask(id: string) {
     const setTasksWithout = tasks.filter((task) => {
-      if (task.id != id) task
+      if (task.id != id) return task
     })
     setTasks(setTasksWithout)
   }

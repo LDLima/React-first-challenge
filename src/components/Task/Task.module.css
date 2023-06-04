@@ -1,5 +1,6 @@
 .task {
   display: flex;
+
   margin-top: 1.5rem;
 }
 
@@ -41,6 +42,7 @@
 
 .contentBox p {
   color: var(--gray-100);
+  flex: 1; /*Make the div to strech the maximum of the size*/
 }
 
 .task + .task {
