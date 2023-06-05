@@ -1,4 +1,4 @@
-import { Circle, Trash } from "phosphor-react"
+import { CheckCircle, Circle, Trash } from "phosphor-react"
 
 import styles from "./Task.module.css"
 import { TaskProps } from "../Interfaces/TaskInterface"
@@ -8,11 +8,19 @@ export function Task({ task, onCompleteTask, onDeleteTask }: TaskProps) {
     <article>
       <div className={styles.task}>
         <div className={styles.contentBox}>
-          <button onClick={handleCompletedTask} className={styles.complete}>
+          
+          <button
+            onClick={handleCompletedTask}
+            className={styles.checkComplete}
+          >
             <Circle size={20} />
           </button>
 
-          <p>{task.content}</p>
+          {task.isComplete === true ? (
+            <p className={styles.isComplete}>{task.content}</p>
+          ) : (
+            <p className={styles.isNotComplete}>{task.content}</p>
+          )}
 
           <button
             title='Delete task'

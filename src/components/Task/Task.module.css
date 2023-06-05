@@ -1,6 +1,5 @@
 .task {
   display: flex;
-
   margin-top: 1.5rem;
 }
 
@@ -24,8 +23,23 @@
   line-height: 0; /*Height from the button*/
 }
 
-.complete {
+.isNotComplete {
+  color: var(--gray-100);
+  flex: 1; /*Make the div to strech the maximum of the size*/
+}
+
+.isComplete {
+  color: var(--gray-300);
+  flex: 1; /*Make the div to strech the maximum of the size*/
+  text-decoration: line-through;
+}
+
+.checkComplete {
   color: var(--blue);
+}
+
+.isCompleteCheck {
+  color: var(--purple-dark);
 }
 
 .complete:hover {
@@ -38,11 +52,6 @@
 
 .delete:hover {
   color: var(--red-danger);
-}
-
-.contentBox p {
-  color: var(--gray-100);
-  flex: 1; /*Make the div to strech the maximum of the size*/
 }
 
 .task + .task {

@@ -80,7 +80,7 @@ export function Board() {
 
   function completeTask(id: string) {
     const setTaskToComplete = tasks.map((task) => {
-      if (task.id === id) !task.isComplete
+      if (task.id === id) task.isComplete = !task.isComplete
       return task
     })
     setTasks(setTaskToComplete)
