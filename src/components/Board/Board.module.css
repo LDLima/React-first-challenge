@@ -48,10 +48,14 @@ strong + strong {
   transition: background-color 0.2s;
 }
 
+.newTask button[type="submit"]:disabled {
+  background-color: var(--not-allowed-blue);
+  cursor: not-allowed;
+}
+
 .newTask button[type="submit"]:not(:disabled):hover {
-  background-color: var(
-    --blue
-  ); /*Make it change the color when cursor is in the button*/
+  transition: background-color 0.2s;
+  background-color: var(--blue);
 }
 
 /*.newTask button[type="submit"]:disabled {

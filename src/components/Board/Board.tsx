@@ -24,9 +24,10 @@ export function Board() {
             placeholder='Adicione uma nova tarefa'
             onChange={handleNewTaskTextChange}
             value={newTaskContent}
+            onInvalid={handleNewCommentValid}
           />
           <div>
-            <button type='submit'>
+            <button type='submit' disabled={newTaskContent.length === 0}>
               Criar <PlusCircle />
             </button>
           </div>
@@ -55,6 +56,8 @@ export function Board() {
     </article>
   )
 
+  function handleNewCommentValid() {}
+
   function handleDeleteTask(id: string) {
     deleteTask(id)
     removeTaskFromTheCount()
@@ -63,6 +66,7 @@ export function Board() {
   function deleteTask(id: string) {
     const setTasksWithout = tasks.filter((task) => {
       if (task.id != id) return task
+      else if (task.isComplete) removeCompletedTaskToTheCount()
     })
     setTasks(setTasksWithout)
   }
@@ -74,16 +78,23 @@ export function Board() {
   }
 
   function handleCompleteTasksCount(id: string) {
-    completeTask(id)
-    addCompletedTaskToTheCount()
-  }
-
-  function completeTask(id: string) {
     const setTaskToComplete = tasks.map((task) => {
-      if (task.id === id) task.isComplete = !task.isComplete
+      if (task.id === id) {
+        console.log(task.isComplete)
+        task.isComplete
+          ? removeCompletedTaskToTheCount()
+          : addCompletedTaskToTheCount()
+        task.isComplete = !task.isComplete
+      }
       return task
     })
     setTasks(setTaskToComplete)
+  }
+
+  function removeCompletedTaskToTheCount() {
+    setDoneTaskCount((amount) => {
+      return amount - 1
+    })
   }
 
   function addCompletedTaskToTheCount() {
@@ -119,25 +130,3 @@ export function Board() {
     return newTask
   }
 }
-
-/* function handleCompleteTasksCount(id: string) {
-    setDoneTaskCount((amount) => {
-      const setNew = tasks.map((task) => {
-        if (task.id === id) {
-          //  If it's false, receive true. And add on to the count of completed tests
-          if (task.isComplete === true) {
-            !task.isComplete
-            amount + 1
-            console.log("Aqui ", amount)
-          } else {
-            // If it's true, receive false. And remove one from the count of completed tests
-            !task.isComplete
-            amount - 1
-          }
-        }
-        return task
-      })
-      setTasks(setNew)
-      return amount
-    })
-  }*/

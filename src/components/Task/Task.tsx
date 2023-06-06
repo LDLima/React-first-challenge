@@ -8,13 +8,18 @@ export function Task({ task, onCompleteTask, onDeleteTask }: TaskProps) {
     <article>
       <div className={styles.task}>
         <div className={styles.contentBox}>
-          
-          <button
-            onClick={handleCompletedTask}
-            className={styles.checkComplete}
-          >
-            <Circle size={20} />
-          </button>
+          {task.isComplete === true ? (
+            <button
+              onClick={handleCompletedTask}
+              className={styles.isCompleteCheckIcon}
+            >
+              <CheckCircle size={20} />
+            </button>
+          ) : (
+            <button onClick={handleCompletedTask} className={styles.checkIcon}>
+              <Circle size={20} />
+            </button>
+          )}
 
           {task.isComplete === true ? (
             <p className={styles.isComplete}>{task.content}</p>

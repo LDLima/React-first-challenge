@@ -1,5 +1,4 @@
 .task {
-  display: flex;
   margin-top: 1.5rem;
 }
 
@@ -34,16 +33,20 @@
   text-decoration: line-through;
 }
 
-.checkComplete {
+.checkIcon {
   color: var(--blue);
 }
 
-.isCompleteCheck {
+.checkIcon:hover {
   color: var(--purple-dark);
 }
 
-.complete:hover {
+.isCompleteCheckIcon {
   color: var(--purple-dark);
+}
+
+.isCompleteCheckIcon:hover {
+  color: var(--blue);
 }
 
 .delete {
