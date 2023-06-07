@@ -1,8 +1,8 @@
-# RocketSeat first challenge - To Do
+# Rocketseat first challenge - To Do
 
 <h2>About</h2>
-  <p>The project is a to-do list, where you input your backlog and mark as completed. Also, is possible to delete the task. Every action will increase or decrease the amount of tasks created and done.
-  Also, is possible to test the accessibility between the devices that will access it.</p>
+  <p>The project is a to-do list, where you input your backlog, mark as completed is deleted if desired. Every action will increase or decrease the amount of tasks created and done.
+   Also, it's possible to test the accessibility between the devices that will access it.</p>
 
 
  <h2>Execute</h2>
@@ -27,9 +27,13 @@
     <img src="./src/assets/emptyBoard.png" alt='Empty board sheet' />
     <img src="./src/assets/taskBoard.png" alt='Task board sheet' />
 
-   <h2>Obs</h2>
-   <span>The project layout is in portuguese, since it was done folowing the instructions from <a href="https://www.rocketseat.com.br/">Rocketseat</a> ignite course.</span>
+   <h2>Notes</h2>
+   <span>If reloaded the page, all the data will be lost! This project does not have database.
+
+  <h3>Language</h3>
+    <span>The project layout is in portuguese, since it was done folowing the instructions from <a href="https://www.rocketseat.com.br/">Rocketseat</a> ignite course.</span>
    <span>Also, the code structure is entirely in english as this readme, for practicing.</span>
+
    
    <h2>Author</h2>
    <p>https://www.linkedin.com/in/luandomingues/</p>
