@@ -28,7 +28,7 @@
     <img src="./src/assets/taskBoard.png" alt='Task board sheet' />
 
    <h2>Obs</h2>
-   <span>The project layout is in portuguese, since it's done folowing the instructions and learn with <a href="https://www.rocketseat.com.br/">Rocketseat</a>.</span>
+   <span>The project layout is in portuguese, since it was done folowing the instructions from <a href="https://www.rocketseat.com.br/">Rocketseat</a> ignite course.</span>
    <span>Also, the code structure is entirely in english as this readme, for practicing.</span>
    
    <h2>Author</h2>
