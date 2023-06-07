@@ -1,4 +1,4 @@
-# RocketSeat first chellenge - To Do
+# RocketSeat first challenge - To Do
 
 <h2>About</h2>
   <p>The project is a to-do list, where you input your backlog and mark as completed. Also, is possible to delete the task. Every action will increase or decrease the amount of tasks created and done.
