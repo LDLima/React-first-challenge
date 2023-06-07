@@ -9,7 +9,7 @@
      <pre>
      
         # clone the repository
-        git clone https://github.com/LDLima/React-1.git
+        git clone https://github.com/LDLima/React-first-challenge.git
 
         # install dependencies
         npm install
