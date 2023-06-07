@@ -2,9 +2,8 @@
   max-width: 46rem; /*Distance found on figma*/
   justify-content: center;
   margin: auto; /* Made the content to be centrilize in the middle of the page*/
-  padding: 0 1rem; /*content not be in the edge of the screen if the size change*/
+  padding: 1rem; /*content not be in the edge of the screen if the size change*/
 
-  display: grid; /*will be set as a grid(table columns) in the screen*/
   grid-template-columns: 1fr; /*variable - 1 column only in teh grid*/
 }
 

@@ -4,6 +4,14 @@ import styles from "./Task.module.css"
 import { TaskProps } from "../Interfaces/TaskInterface"
 
 export function Task({ task, onCompleteTask, onDeleteTask }: TaskProps) {
+  function handleCompletedTask() {
+    onCompleteTask(task.id)
+  }
+
+  function handleDeleteTask() {
+    onDeleteTask(task.id)
+  }
+
   return (
     <article>
       <div className={styles.task}>
@@ -32,18 +40,10 @@ export function Task({ task, onCompleteTask, onDeleteTask }: TaskProps) {
             onClick={handleDeleteTask}
             className={styles.delete}
           >
-            <Trash size={15} />
+            <Trash size={18} />
           </button>
         </div>
       </div>
     </article>
   )
-
-  function handleCompletedTask() {
-    onCompleteTask(task.id)
-  }
-
-  function handleDeleteTask() {
-    onDeleteTask(task.id)
-  }
 }

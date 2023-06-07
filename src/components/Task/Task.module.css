@@ -22,6 +22,10 @@
   line-height: 0; /*Height from the button*/
 }
 
+.contentBox button:focus {
+  box-shadow: none;
+}
+
 .isNotComplete {
   color: var(--gray-100);
   flex: 1; /*Make the div to strech the maximum of the size*/

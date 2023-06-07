@@ -13,6 +13,17 @@ strong + strong {
   color: var(--purple);
 }
 
+.numbersCount {
+  width: 1.5rem;
+  height: 1.1rem;
+  margin: 0.5rem;
+  padding: 0.125rem 0.5rem;
+
+  border-radius: 0.7rem; /* Make the border curved*/
+  color: var(--gray-200);
+  background-color: var(--gray-400);
+}
+
 .newTask {
   display: flex;
   margin-top: -1.5rem;
@@ -29,6 +40,10 @@ strong + strong {
   border-radius: 0.5rem;
   color: var(--gray-300);
   background-color: var(--gray-500);
+}
+
+.newTask textarea:focus {
+  color: var(--gray-100);
 }
 
 .newTask button {
@@ -57,8 +72,3 @@ strong + strong {
   transition: background-color 0.2s;
   background-color: var(--blue);
 }
-
-/*.newTask button[type="submit"]:disabled {
-  opacity: 0.5;
-  cursor: not-allowed; /* // To when there is none info, Don't allow to clic in the button
-}*/

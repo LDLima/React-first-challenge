@@ -14,50 +14,6 @@ export function Board() {
   const [tasksCount, setTaskCount] = useState<number>(0)
   const [tasksDoneCount, setDoneTaskCount] = useState<number>(0)
 
-  return (
-    <article>
-      <header>
-        {/* <NewTask /> */}
-        <form onSubmit={handleCreateNewTask} className={styles.newTask}>
-          <textarea
-            name='task'
-            placeholder='Adicione uma nova tarefa'
-            onChange={handleNewTaskTextChange}
-            value={newTaskContent}
-            onInvalid={handleNewCommentValid}
-          />
-          <div>
-            <button type='submit' disabled={newTaskContent.length === 0}>
-              Criar <PlusCircle />
-            </button>
-          </div>
-        </form>
-
-        <div className={styles.listStatus}>
-          <strong>Tarefas criadas {tasksCount}</strong>
-          <strong>Concluídas {tasksDoneCount}</strong>
-        </div>
-      </header>
-
-      <div>
-        {tasks.length === 0 ? (
-          <EmptyBoard />
-        ) : (
-          tasks.map((task) => (
-            <Task
-              key={task.id}
-              task={task}
-              onCompleteTask={handleCompleteTasksCount}
-              onDeleteTask={handleDeleteTask}
-            />
-          ))
-        )}
-      </div>
-    </article>
-  )
-
-  function handleNewCommentValid() {}
-
   function handleDeleteTask(id: string) {
     deleteTask(id)
     removeTaskFromTheCount()
@@ -80,7 +36,6 @@ export function Board() {
   function handleCompleteTasksCount(id: string) {
     const setTaskToComplete = tasks.map((task) => {
       if (task.id === id) {
-        console.log(task.isComplete)
         task.isComplete
           ? removeCompletedTaskToTheCount()
           : addCompletedTaskToTheCount()
@@ -129,4 +84,50 @@ export function Board() {
     }
     return newTask
   }
+
+  return (
+    <article>
+      <header>
+        <form onSubmit={handleCreateNewTask} className={styles.newTask}>
+          <textarea
+            name='task'
+            placeholder='Adicione uma nova tarefa'
+            onChange={handleNewTaskTextChange}
+            value={newTaskContent}
+          />
+          <div>
+            <button type='submit' disabled={newTaskContent.length === 0}>
+              Criar <PlusCircle />
+            </button>
+          </div>
+        </form>
+
+        <div className={styles.listStatus}>
+          <strong>
+            Tarefas criadas
+            <span className={styles.numbersCount}>{tasksCount}</span>
+          </strong>
+          <strong>
+            Concluídas
+            <span className={styles.numbersCount}>{tasksDoneCount}</span>
+          </strong>
+        </div>
+      </header>
+
+      <div>
+        {tasks.length === 0 ? (
+          <EmptyBoard />
+        ) : (
+          tasks.map((task) => (
+            <Task
+              key={task.id}
+              task={task}
+              onCompleteTask={handleCompleteTasksCount}
+              onDeleteTask={handleDeleteTask}
+            />
+          ))
+        )}
+      </div>
+    </article>
+  )
 }
