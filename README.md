@@ -28,8 +28,8 @@
     <img src="./src/assets/taskBoard.png" alt='Task board sheet' />
 
    <h2>Obs</h2>
-   <span>The project layout is in portuguese, since it's done folowing the instructions and learn with <a href="https://www.rocketseat.com.br/">Rocketseat</a></span>
-   <span>And, last but not least, the code structure is entirely in english as this readme, for practicing.</span>
+   <span>The project layout is in portuguese, since it's done folowing the instructions and learn with <a href="https://www.rocketseat.com.br/">Rocketseat</a>.</span>
+   <span>Also, the code structure is entirely in english as this readme, for practicing.</span>
    
    <h2>Author</h2>
    <p>https://www.linkedin.com/in/luandomingues/</p>
